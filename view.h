@@ -17,7 +17,7 @@ public:
     ~View() override;
     void PushToStack(const QString& name) override;
     void PopFromStackToOut(const QString& name) override;
-    void Compare() override;
+    void Compare(const bool& are_equal) override;
 
 private:
     Ui::View *_ui;

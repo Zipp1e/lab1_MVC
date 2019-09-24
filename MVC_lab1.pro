@@ -33,7 +33,8 @@ HEADERS += \
         view.h \
     abstractview.h \
     abstractcontroller.h \
-    controller.h
+    controller.h \
+    stack.h
 
 FORMS += \
         view.ui
