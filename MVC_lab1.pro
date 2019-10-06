@@ -27,14 +27,18 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         view.cpp \
-    controller.cpp
+    controller.cpp \
+    iterator.cpp
 
 HEADERS += \
         view.h \
     abstractview.h \
     abstractcontroller.h \
     controller.h \
-    stack.h
+    stack.h \
+    abstractiterator.h \
+    iterator.h \
+    iterable.h
 
 FORMS += \
         view.ui
