@@ -4,6 +4,8 @@
 #endif // ABSTRACTCONTROLLER_H
 
 #include <QString>
+#include "savior.h"
+#include "stack.h"
 
 class AbstractController
 {

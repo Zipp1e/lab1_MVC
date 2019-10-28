@@ -28,7 +28,9 @@ SOURCES += \
         main.cpp \
         view.cpp \
     controller.cpp \
-    iterator.cpp
+    iterator.cpp \
+    crowd.cpp \
+    savior.cpp
 
 HEADERS += \
         view.h \
@@ -38,7 +40,11 @@ HEADERS += \
     stack.h \
     abstractiterator.h \
     iterator.h \
-    iterable.h
+    iterable.h \
+    peoplegroup.h \
+    visitor.h \
+    savior.h \
+    crowd.h
 
 FORMS += \
         view.ui

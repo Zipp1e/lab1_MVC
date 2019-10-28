@@ -21,6 +21,7 @@ public:
     void ScrollUp(const int& number) override;
     void ScrollDown(const int& number) override;
     void RewriteName(const int& number) override;
+    void SaveFromCrowd();
 
 public slots:
     void stack_input_slot();
@@ -29,6 +30,7 @@ public slots:
     void scroll_up_slot();
     void scroll_down_slot();
     void change_name_slot();
+    void crowd_erase_slot();
 
 private:
     Ui::View *_ui;

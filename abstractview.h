@@ -14,6 +14,7 @@ public:
     virtual void ScrollUp(const int& number) = 0;
     virtual void ScrollDown(const int& number) = 0;
     virtual void RewriteName(const int& number) = 0;
+    virtual void SaveFromCrowd() = 0;
 };
 
 #endif // ABSTRACTVIEW_H

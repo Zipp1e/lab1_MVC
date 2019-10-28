@@ -8,7 +8,9 @@ View::View(QWidget *parent) :
 {
     _ui->setupUi(this);
     _controller = new Controller(this);
-
+    for (QString& item : _controller->crowd_->people_) {
+        _ui->crowd_view_->addItem(item);
+    }
 
 
     QObject::connect(_ui->stack_input_button_, &QPushButton::clicked, this, &View::stack_input_slot);
@@ -17,6 +19,7 @@ View::View(QWidget *parent) :
     QObject::connect(_ui->iterate_up_button_, &QPushButton::clicked, this, &View::scroll_up_slot);
     QObject::connect(_ui->iterate_down_button_, &QPushButton::clicked, this, &View::scroll_down_slot);
     QObject::connect(_ui->change_button_, &QPushButton::clicked, this, &View::change_name_slot);
+    QObject::connect(_ui->save_button_, &QPushButton::clicked, this, &View::crowd_erase_slot);
 }
 
 
@@ -51,7 +54,9 @@ void View::change_name_slot() {
     _controller->ChangeName(_ui->change_name_->text());
 }
 
-
+void View::crowd_erase_slot() {
+    _controller->EraseFromCrowd();
+}
 
 
 void View::FallIntoPit(const QString &name){
@@ -91,4 +96,8 @@ void View::ScrollDown(const int &number) {
 
 void View::RewriteName(const int &number) {
     _ui->stack_widget_2_->item(number)->setText(_ui->change_name_->text());
+}
+
+void View::SaveFromCrowd() {
+    _ui->crowd_view_->takeItem(0);
 }

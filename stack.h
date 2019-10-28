@@ -1,11 +1,13 @@
+#pragma once
 #ifndef STACK_H
 #define STACK_H
 
-#include "iterable.h"
 #include <QString>
 #include <vector>
+#include "iterable.h"
+#include "peoplegroup.h"
 
-class StringStack : public Iterable {
+class StringStack : public Iterable, public PeopleGroup {
   friend class Iterator;
  public:
 
@@ -60,6 +62,9 @@ class StringStack : public Iterable {
 
   Iterator CreateIterator() override {
       return Iterator(data_);
+  }
+  void Accept(Visitor& v) override {
+      v.VisitStack(this);
   }
 
  private:

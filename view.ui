@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>873</width>
-    <height>341</height>
+    <width>1096</width>
+    <height>336</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -203,13 +203,36 @@
      <string>Ввод</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="save_button_">
+    <property name="geometry">
+     <rect>
+      <x>910</x>
+      <y>190</y>
+      <width>131</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Спасти</string>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="crowd_view_">
+    <property name="geometry">
+     <rect>
+      <x>910</x>
+      <y>10</y>
+      <width>131</width>
+      <height>171</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>873</width>
+     <width>1096</width>
      <height>17</height>
     </rect>
    </property>

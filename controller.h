@@ -3,7 +3,7 @@
 
 #include "abstractcontroller.h"
 #include "abstractview.h"
-#include "stack.h"
+
 
 class Controller : public AbstractController
 {
@@ -16,11 +16,14 @@ public:
     void IterateUp();
     void IterateDown();
     void ChangeName(const QString& name);
+    void EraseFromCrowd();
+    Crowd* crowd_;
 private:
     AbstractView *_view;
     StringStack *_stack;
     StringStack *_out;
     Iterator iterator_;
+    Savior* savior_;
 };
 
 #endif // CONTROLLER_H

@@ -1,9 +1,10 @@
 #include "controller.h"
-#include "stack.h"
 #include <iostream>
 
 Controller::Controller(AbstractView *view) :
-    _view(view), _stack(new StringStack(10)), _out(new StringStack(10)), iterator_(_out->CreateIterator()) {
+    _view(view), _stack(new StringStack(10)),
+    _out(new StringStack(10)), iterator_(_out->CreateIterator()), crowd_(new Crowd), savior_(new Savior)
+{
 }
 
 Controller::~Controller(){
@@ -39,4 +40,9 @@ void Controller::IterateDown() {
 void Controller::ChangeName(const QString& name) {
     iterator_.RewriteCurrent(name);
     _view->RewriteName(iterator_.GetCurrentIndex());
+}
+
+void Controller::EraseFromCrowd() {
+   crowd_->Accept(*savior_);
+   _view->SaveFromCrowd();
 }
